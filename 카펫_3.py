@@ -1,0 +1,1 @@
+solution = lambda b,y: [[(b+y)/i,i] for i in range(3,b//3+2) if (b+y)%i == 0 and  ((b+y)/i-2 == y/(i-2))][0]
