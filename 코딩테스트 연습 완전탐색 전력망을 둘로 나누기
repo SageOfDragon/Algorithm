@@ -1,0 +1,17 @@
+def solution(n, w):
+    answer = []
+    for k in w:
+        w1 = w[:]
+        w1.remove(k)
+        numset = {1}
+        num1, num2 = 0 , 1
+        while num1< num2:
+            num1 = len(numset) 
+            for i,j in w1:
+                if i in numset:
+                    numset.add(j)
+                if j in numset:
+                    numset.add(i)  
+            num2 = len(numset)     
+        answer.append(abs(n - 2*num2))   
+    return min(answer)
