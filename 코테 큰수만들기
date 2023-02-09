@@ -1,0 +1,15 @@
+def solution(number, k):   
+    if k <= 0: return ''.join(number)
+    l = max(number[:k+1])
+    o = number.index(l)
+    return str(l) +  solution(number[o+1:],k-o)
+
+def solution(number, k):
+    answer = ''
+    while k>0:
+        l = max(number[:k+1])
+        o = number.index(l)
+        number = number[o+1:]
+        k -= o
+        answer += l 
+    return answer + number
